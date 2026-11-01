@@ -1,0 +1,406 @@
+/* Data & Coding Lab styles */
+.data-groups {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 26px;
+}
+
+@media (max-width: 850px) {
+  .data-groups {
+    grid-template-columns: 1fr;
+  }
+}
+
+.story-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 20px;
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Scaled Bar Graph */
+.graph-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scaled-graph-svg {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
+.graph-axis-line {
+  stroke: #7e8d83;
+  stroke-width: 2;
+}
+
+.graph-grid-line {
+  stroke: #dedfd3;
+  stroke-width: 1;
+  stroke-dasharray: 3 3;
+}
+
+.graph-label {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  fill: #263f37;
+}
+
+.graph-tick-label {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  fill: #66746a;
+  text-anchor: middle;
+}
+
+.scale-badge-text {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  fill: #263f37;
+}
+
+.bar-val-badge {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  fill: #263f37;
+}
+
+/* Two-Way Summary Table */
+.two-way-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin: 0 auto;
+  padding: 4px;
+}
+
+.two-way-table {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 2px solid #b7c3b2;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+  font-size: 13px;
+  text-align: center;
+}
+
+.two-way-table th,
+.two-way-table td {
+  padding: 9px 8px;
+  border-right: 1px solid #dedfd3;
+  border-bottom: 1px solid #dedfd3;
+}
+
+.two-way-table th:last-child,
+.two-way-table td:last-child {
+  border-right: none;
+}
+
+.two-way-table tr:last-child td {
+  border-bottom: none;
+}
+
+.two-way-table thead th {
+  background: #edf1e4;
+  font-weight: 700;
+  color: #263f37;
+}
+
+.two-way-table thead th.corner-cell {
+  background: #e3ebd8;
+  font-size: 12px;
+}
+
+.two-way-table tbody th.row-header {
+  background: #f7f9f2;
+  font-weight: 600;
+  text-align: left;
+  padding-left: 10px;
+}
+
+.two-way-table .col-total {
+  background: #fdf5eb;
+  font-weight: 700;
+  color: #8c492a;
+}
+
+.two-way-table .row-total {
+  background: #fdf5eb;
+  font-weight: 700;
+  color: #8c492a;
+}
+
+.two-way-table .grand-total {
+  background: #fbebd9;
+  font-weight: 800;
+  font-size: 14px;
+  color: #633215;
+}
+
+.missing-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 26px;
+  padding: 0 6px;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 13px;
+  border: 2px dashed #d7a841;
+  background: #fcf2d7;
+  color: #825a12;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.missing-badge.solved {
+  background: #eaf3e4;
+  border-style: solid;
+  border-color: #5b9b6e;
+  color: #235634;
+}
+
+.two-way-table tr.row-focus {
+  background: #f3f8ee !important;
+  box-shadow: inset 0 0 0 2px #5b9b6e;
+}
+
+.two-way-table td.col-focus,
+.two-way-table th.col-focus {
+  background: #fbf5e6 !important;
+  box-shadow: inset 0 0 0 2px #d7a841;
+}
+
+/* 8-Point Compass & Grid Map */
+.map-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.compass-map-svg {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+}
+
+.map-grid-bg {
+  fill: #fffef9;
+  stroke: #b7c3b2;
+  stroke-width: 1.5;
+}
+
+.map-grid-line {
+  stroke: #dedfd3;
+  stroke-width: 1;
+}
+
+.map-axis-label {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  fill: #66746a;
+  text-anchor: middle;
+}
+
+.map-coord-label {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  fill: #4e5f55;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.compass-card {
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.08));
+}
+
+.compass-pointer {
+  transition: transform 0.3s ease;
+}
+
+/* Robot Coding */
+.coding-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  align-items: center;
+}
+
+.code-blocks-card {
+  background: #ffffff;
+  border: 1.5px solid #dedfd3;
+  border-radius: 12px;
+  padding: 10px 14px;
+  width: 100%;
+  max-width: 440px;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+
+.code-block {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 3px 0;
+  color: #ffffff;
+}
+
+.code-start {
+  background: #4a90e2;
+}
+
+.code-loop {
+  background: #f39c12;
+  border-radius: 8px 8px 4px 4px;
+}
+
+.code-loop-body {
+  border-left: 4px solid #f39c12;
+  padding-left: 14px;
+  margin: 2px 0 2px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.code-loop-end {
+  font-size: 11px;
+  color: #b77a0c;
+  font-weight: 700;
+  margin: 2px 0 4px 10px;
+}
+
+.code-move {
+  background: #27ae60;
+}
+
+.code-move-extra {
+  background: #8e44ad;
+}
+
+.coding-grid-svg {
+  display: block;
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+}
+
+/* Radio choice fields (Compass Directions) */
+.choice-field {
+  border: 0;
+  padding: 0;
+  margin: 0 0 15px;
+  min-width: 0;
+}
+
+.choice-field legend {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  padding: 0;
+  color: var(--ink);
+}
+
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.choice {
+  position: relative;
+}
+
+.choice input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.choice span {
+  display: inline-block;
+  border: 1px solid #b7c3b2;
+  background: #fff;
+  border-radius: 30px;
+  padding: 7px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+  transition: all 0.15s ease;
+}
+
+.choice input:checked + span {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+}
+
+.choice input:focus-visible + span {
+  outline: 3px solid #9071c4;
+  outline-offset: 3px;
+}
+
+.choice:hover span {
+  border-color: var(--green);
+}
+
+.choice-field[aria-invalid="true"] .choice input:checked + span {
+  background: #ad633c;
+  border-color: #ad633c;
+}
+
+/* Diagram callouts and visual explanation cards */
+.diagram-callout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.equation-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #eef3e8;
+  border: 1px solid #c8d8c2;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #263f37;
+}
+
+.step-math-pill {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: #ffffff;
+  border: 1px solid #b7c3b2;
+  font-weight: 700;
+  color: #263f37;
+}

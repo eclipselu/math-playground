@@ -1,0 +1,499 @@
+/* word-problems.css — Dedicated styles for Grade 3 Word Problems & Logic */
+
+/* 4-group responsive layout for topic selection */
+.topic-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+  margin-bottom: 26px;
+}
+
+@media (max-width: 980px) {
+  .topic-groups {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Difference & Multiple (diffRatio) */
+.part.diff-highlight {
+  background: var(--yellow) !important;
+  border: 2px dashed #aa8732 !important;
+  color: #5a4310;
+}
+
+.diff-summary {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.diff-badge {
+  font-size: 12px;
+  font-weight: 700;
+  background: #fdf5d6;
+  border: 1px solid #d8b858;
+  color: #634b08;
+  padding: 5px 12px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Age Puzzles */
+.age-diagram {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.age-bar-row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  align-items: center;
+  gap: 10px;
+}
+
+.age-person {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.age-track {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #fff;
+  border: 1px solid #c9d5be;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.age-segment {
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.age-segment.child-bar {
+  background: #cbdcbb;
+  color: #294420;
+}
+
+.age-segment.gap-bar {
+  background: var(--peach);
+  color: #793c15;
+  border: 1px dashed #d99a73;
+}
+
+.age-constant-note {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #496342;
+  background: #eaf1e3;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.timeline-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #fff9;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.timeline-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 13px;
+  padding: 6px 10px;
+  background: #f7faf3;
+  border-radius: 8px;
+}
+
+.timeline-who {
+  font-weight: 700;
+  width: 70px;
+}
+
+.timeline-val {
+  font-weight: 700;
+  padding: 4px 8px;
+  background: #e2ecd9;
+  border-radius: 6px;
+}
+
+.timeline-val.future {
+  background: var(--yellow);
+  color: #543f05;
+}
+
+.timeline-arrow {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.timeline-check {
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  color: #2c6240;
+  margin-top: 4px;
+}
+
+/* Venn Diagram (Overlapping Circles) */
+.venn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.venn-svg {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05));
+}
+
+.venn-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
+
+.legend-pill {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 9px;
+  border-radius: 12px;
+}
+
+.legend-pill.green {
+  background: #d3e7c5;
+  color: #2c5422;
+}
+
+.legend-pill.peach {
+  background: #fad7bf;
+  color: #793710;
+}
+
+.legend-pill.yellow {
+  background: #f9e9ad;
+  color: #6a4f08;
+}
+
+.legend-pill.gray {
+  background: #e3e7de;
+  color: #4b584e;
+}
+
+/* Combinations (combo) */
+.combo-card-row {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.combo-card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 48px;
+  background: #fff;
+  border: 2px solid #315b48;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 800;
+  box-shadow: 0 2px 0 #234636;
+}
+
+.combo-card.zero {
+  border-color: #aa7a12;
+  background: #fffbe8;
+  color: #8c5d08;
+}
+
+.combo-slots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 10px 0;
+}
+
+.combo-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fffdf5;
+  border: 2px dashed #b7c3ad;
+  border-radius: 10px;
+  padding: 8px 14px;
+  min-width: 100px;
+}
+
+.combo-slot strong {
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.combo-slot span {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--ink);
+  margin-top: 4px;
+}
+
+.combo-list-box {
+  background: #fff;
+  border: 1px solid #d9dfcd;
+  border-radius: 8px;
+  padding: 8px 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.combo-item-chip {
+  background: #edf2e6;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+/* Planting, Logs & Stairs */
+.path-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid #dce2d2;
+  border-radius: 12px;
+  padding: 14px 10px;
+}
+
+.trees-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 0 10px;
+}
+
+.tree-spot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+.tree-icon {
+  font-size: 24px;
+}
+
+.tree-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #4b6244;
+  margin-top: 2px;
+}
+
+.road-line {
+  height: 4px;
+  background: #b5c7a9;
+  border-radius: 2px;
+  margin: -14px 15px 10px;
+}
+
+.gaps-indicator {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #3b5b32;
+  background: #eef5e7;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+.log-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  background: #7a502c;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.log-piece {
+  flex: 1;
+  background: #d4a373;
+  border: 1px solid #a87242;
+  border-radius: 6px;
+  padding: 12px 4px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #3d230e;
+}
+
+.cut-marker {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.stairs-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.stair-step {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 12px;
+  background: #e9efe1;
+  border-left: 5px solid #4a7543;
+  border-radius: 0 8px 8px 0;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.stair-step.ground {
+  border-left-color: #8c734b;
+  background: #f5eee2;
+}
+
+/* Work Backwards Flowchart */
+.flow-diagram {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.flow-track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.flow-box {
+  min-width: 46px;
+  height: 42px;
+  padding: 0 8px;
+  display: grid;
+  place-items: center;
+  border: 2px solid #315b48;
+  background: #fff;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.flow-box.start {
+  background: #fbf1d6;
+  border-color: #b58316;
+  color: #634303;
+}
+
+.flow-box.end {
+  background: #dcf1d3;
+  border-color: #276239;
+  color: #174223;
+}
+
+.flow-box.active {
+  box-shadow: 0 0 0 3px #81c784;
+}
+
+.flow-arrow-pill {
+  font-size: 10px;
+  font-weight: 800;
+  background: #e4eadc;
+  padding: 4px 6px;
+  border-radius: 6px;
+  color: #3f5539;
+  white-space: nowrap;
+}
+
+.flow-arrow-pill.reverse {
+  background: var(--yellow);
+  color: #5a4103;
+}
+
+/* Chickens & Rabbits */
+.barn-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.animal-split-row {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.animal-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #d4dec8;
+  border-radius: 12px;
+  padding: 10px 14px;
+  min-width: 110px;
+}
+
+.animal-card .avatar {
+  font-size: 32px;
+}
+
+.animal-card .count {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 4px 0 2px;
+}
+
+.animal-card .legs-info {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.legs-calc-box {
+  background: #edf2e4;
+  border-radius: 10px;
+  padding: 8px 12px;
+  text-align: center;
+  font-size: 12px;
+  color: #3b4e36;
+}
+
+.legs-calc-box strong {
+  color: var(--ink);
+}

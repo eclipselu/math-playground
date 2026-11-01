@@ -1,0 +1,183 @@
+/* Area & Perimeter Studio Styles */
+
+.area-groups {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 26px;
+}
+
+.area-diagram {
+  padding: 16px;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.area-svg {
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  max-height: 270px;
+  display: block;
+  margin: 0 auto;
+  user-select: none;
+}
+
+/* SVG Text & Element Styling */
+.area-svg text {
+  font-family: 'DM Sans', system-ui, sans-serif;
+}
+
+.dim-text {
+  font-size: 13px;
+  font-weight: 700;
+  fill: #263f37;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.dim-missing {
+  font-size: 16px;
+  font-weight: 800;
+  fill: #ba4722;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.dim-found {
+  font-size: 14px;
+  font-weight: 800;
+  fill: #2c6240;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.part-label {
+  font-size: 13px;
+  font-weight: 700;
+  fill: #3b5045;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.slice-line {
+  stroke: #ba4722;
+  stroke-width: 2.5;
+  stroke-dasharray: 6 4;
+}
+
+.seam-line {
+  stroke: #456cb0;
+  stroke-width: 2.5;
+  stroke-dasharray: 5 4;
+}
+
+.slide-arrow {
+  stroke: #2e6c4a;
+  stroke-width: 2;
+  marker-end: url(#arrow-green);
+}
+
+.slide-arrow-u {
+  stroke: #ba4722;
+  stroke-width: 2;
+  marker-end: url(#arrow-orange);
+}
+
+/* MaxMin Comparison Table */
+.compare-container {
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.compare-svg-duo {
+  width: 100%;
+  max-height: 140px;
+  display: block;
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid #d4dec8;
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 13px;
+  background: #fff;
+  text-align: center;
+}
+
+.compare-table th {
+  background: #e6edd9;
+  padding: 8px 10px;
+  font-weight: 700;
+  color: #2e4a3d;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+}
+
+.compare-table td {
+  padding: 7px 10px;
+  border-top: 1px solid #edf0e3;
+  color: #3b4e42;
+}
+
+.compare-table tr.winner {
+  background: #eaf5e1;
+  font-weight: 700;
+  color: #1e5233;
+}
+
+.compare-table tr.winner td:first-child::before {
+  content: '★ ';
+  color: #d18d19;
+}
+
+/* Tile Grid Patterns */
+.tile-item {
+  stroke: #98aa8e;
+  stroke-width: 1;
+}
+
+/* Fence Styling */
+.fence-post {
+  fill: #8f6738;
+}
+
+.fence-wire {
+  stroke: #b3884e;
+  stroke-width: 2.5;
+}
+
+.wall-top {
+  fill: #bb5a42;
+  stroke: #873622;
+  stroke-width: 2;
+}
+
+/* Responsive Overrides */
+@media (max-width: 980px) {
+  .area-groups {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .area-diagram {
+    padding: 10px;
+    min-height: 210px;
+  }
+  .compare-table {
+    font-size: 11px;
+  }
+  .compare-table th, .compare-table td {
+    padding: 5px 6px;
+  }
+}

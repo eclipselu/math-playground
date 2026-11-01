@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ec">
+  <title>Fractions & Decimals Lab · Little Big Math</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="fractions.css">
+  <script defer src="fractions.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">✳</span> little big <b>math</b></a>
+    <div class="topbar-right">
+      <a class="back-link" href="index.html">← All adventures</a>
+      <div class="stars" aria-label="Problems solved"><span aria-hidden="true">★</span> <span id="star-count">0</span> stars earned</div>
+    </div>
+  </header>
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow"><span class="tiny-dot"></span> FRACTIONS & DECIMALS LAB · PARTS OF A WHOLE</p>
+      <h1>Slice, share & place.<br><span>See every piece.</span></h1>
+      <p class="hero-description">Pizzas, number lines, bars, and decimal grids.<br>See how fractions and decimals fit together piece by piece!</p>
+    </section>
+
+    <section class="practice" aria-label="Fractions and decimals practice">
+      <div class="section-heading">
+        <h2>Pick a kind of problem</h2>
+        <button class="text-button" id="mix-button">🎲 Surprise me</button>
+      </div>
+      <div class="topic-groups fractions-groups">
+        <div class="topic-group" role="group" aria-label="Share & place on a line">
+          <h3 class="topic-group-title"><span aria-hidden="true">🍕</span> Share & place on a line <small>Cut fairly and hop from 0</small></h3>
+          <div class="topics">
+            <button class="topic" data-topic="fairShare"><span class="topic-icon peach">🍕</span><strong>Fair Shares</strong><small>Cut & share equally</small></button>
+            <button class="topic" data-topic="numberLine"><span class="topic-icon green">🐸</span><strong>Fraction Number Line</strong><small>Hop along equal spaces</small></button>
+          </div>
+        </div>
+        <div class="topic-group" role="group" aria-label="Match & compare">
+          <h3 class="topic-group-title"><span aria-hidden="true">🍫</span> Match & compare <small>Find twins and duel</small></h3>
+          <div class="topics">
+            <button class="topic" data-topic="equivalent"><span class="topic-icon lilac">🍫</span><strong>Same-Size Fractions</strong><small>Cut each piece smaller</small></button>
+            <button class="topic" data-topic="compare"><span class="topic-icon yellow">⚖️</span><strong>Which is Bigger?</strong><small>Compare without guessing</small></button>
+          </div>
+        </div>
+        <div class="topic-group" role="group" aria-label="Parts of a group & decimals">
+          <h3 class="topic-group-title"><span aria-hidden="true">🪙</span> Groups, add & decimals <small>Fractions of collections and tenth dots</small></h3>
+          <div class="topics">
+            <button class="topic" data-topic="ofWhole"><span class="topic-icon blue">🧺</span><strong>Part of a Group</strong><small>Split into equal teams</small></button>
+            <button class="topic" data-topic="fracAddSub"><span class="topic-icon lilac">🧩</span><strong>Add & Take Away</strong><small>Same-size pieces</small></button>
+            <button class="topic" data-topic="decimals"><span class="topic-icon yellow">🪙</span><strong>Tenths & Hundredths</strong><small>Meet the decimal point</small></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="workspace">
+        <section class="problem-card" aria-labelledby="problem-title">
+          <div class="card-top">
+            <span class="eyebrow" id="topic-caption">FAIR SHARES</span>
+            <label class="difficulty">Level
+              <select id="difficulty">
+                <option value="easy">At my level</option>
+                <option value="medium">A little harder</option>
+                <option value="large">Big challenge</option>
+              </select>
+            </label>
+          </div>
+          <div class="story-icon" id="story-icon" aria-hidden="true">🍕</div>
+          <h2 id="problem-title">Cut every piece so everyone gets the same</h2>
+          <p class="story" id="story"></p>
+          <div class="story-visual" id="story-visual"></div>
+          <form id="answer-form" novalidate>
+            <div id="answer-fields"></div>
+            <button class="primary check" type="submit">Check my answer <span aria-hidden="true">↗</span></button>
+          </form>
+          <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
+          <div class="problem-actions">
+            <button class="text-button" id="hint-button">💡 A little hint</button>
+            <button class="text-button" id="new-button">New problem <span aria-hidden="true">↻</span></button>
+          </div>
+          <p class="hint" id="hint" hidden></p>
+        </section>
+
+        <section class="visual-card" aria-labelledby="visual-title">
+          <div class="card-top">
+            <span class="eyebrow">LET’S PICTURE IT</span>
+            <span class="picture-badge" id="picture-badge">Slice each whole into equal pieces</span>
+          </div>
+          <h2 id="visual-title">See the pieces</h2>
+          <p class="step-description" id="step-description"></p>
+          <div id="diagram" class="diagram" aria-live="polite"></div>
+          <div class="equation" id="equation"></div>
+          <div class="step-controls">
+            <button id="previous-step" class="round-button" aria-label="Previous explanation step">←</button>
+            <div id="step-dots" class="step-dots" role="group" aria-label="Explanation steps"></div>
+            <button id="next-step" class="primary">Show the next step →</button>
+          </div>
+          <p class="visual-note" id="visual-note">Take your time. You can try an answer at any step.</p>
+        </section>
+      </div>
+
+      <div class="encouragement">
+        <span aria-hidden="true">🌱</span>
+        <div>
+          <strong>Good thinking grows with practice.</strong>
+          <span>Each solved problem earns a star. Collect 10 for a little celebration!</span>
+        </div>
+        <div class="progress-track" aria-label="Progress toward 10 stars">
+          <div id="progress-fill"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>Made for curious minds. <span>See it. Try it. You’ve got this.</span></footer>
+  <div id="celebration" class="celebration" role="status" aria-live="polite"></div>
+</body>
+</html>

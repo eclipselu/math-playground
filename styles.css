@@ -32,7 +32,7 @@
 .chips{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:7px}
 .chips a{display:inline-block;background:var(--paper);border:1px solid var(--line);border-radius:30px;padding:7px 12px;font-size:12px;color:var(--ink);text-decoration:none}
 .chips a:hover{border-color:var(--green);background:#f0f2e7}
-.peach-card{background:#fbeee2}.lilac-card{background:#f2ecf8}.green-card{background:#e9efdf}
+.peach-card{background:#fbeee2}.lilac-card{background:#f2ecf8}.green-card{background:#e9efdf}.yellow-card{background:#fbf5dc}.blue-card{background:#e6f1f0}.coral-card{background:#fae8e4}.sage-card{background:#e7efe8}
 
 /* Word problems: grouped topic buttons */
 .topic-groups{display:grid;grid-template-columns:1.25fr .9fr 1.6fr;gap:16px;margin-bottom:26px}

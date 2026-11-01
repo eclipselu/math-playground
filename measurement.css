@@ -1,0 +1,486 @@
+/* Time, Calendar, Money & Scales Lab */
+
+/* Topic buttons layout */
+.topic-groups {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 26px;
+}
+@media (max-width: 980px) {
+  .topic-groups {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Analog Clocks */
+.clock-duo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 8px 0;
+}
+.analog-clock-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.analog-clock {
+  width: 125px;
+  height: 125px;
+  filter: drop-shadow(0 2px 6px rgba(38, 63, 55, 0.08));
+}
+.clock-label {
+  font-size: 12px;
+  color: var(--ink);
+  margin-top: 2px;
+}
+.clock-digital {
+  background: #fff;
+  border: 1.5px solid #b8c6b6;
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-weight: 800;
+  font-size: 14px;
+  color: #263f37;
+  letter-spacing: 0.5px;
+}
+.clock-digital.mystery {
+  color: #dc855a;
+  border-style: dashed;
+}
+
+/* Timeline */
+.timeline-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+.timeline-svg {
+  width: 100%;
+  max-width: 490px;
+  height: auto;
+  overflow: visible;
+}
+
+/* Beakers & Cylinders */
+.beaker-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 6px 0;
+}
+.beaker-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cylinder-svg {
+  width: 80px;
+  height: 145px;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.05));
+}
+.beaker-unit.combo .cylinder-svg {
+  width: 95px;
+}
+.beaker-plus, .beaker-arrow {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--green);
+}
+.beaker-reading {
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 5px;
+  color: #263f37;
+}
+.conversion-pill {
+  background: #e0e9d3;
+  border: 1px solid #b7c8a6;
+  padding: 12px 18px;
+  border-radius: 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 10px auto;
+  max-width: 260px;
+}
+.conversion-pill strong {
+  font-size: 14px;
+  color: #263f37;
+}
+.conversion-pill span {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Balance Scale */
+.balance-stage {
+  display: flex;
+  justify-content: center;
+  padding: 6px 0;
+}
+.balance-svg {
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+}
+
+/* Calendar Visuals */
+.calendar-visual-box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+}
+.month-rule-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+  max-width: 460px;
+}
+.month-chip {
+  font-size: 11px;
+  padding: 4px 7px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: #3d5045;
+}
+.month-chip.big-month {
+  background: #e0e9d3;
+  border-color: #a4be9b;
+  font-weight: 700;
+  color: #1e3a2d;
+}
+.date-hop-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid #d9dfcd;
+  border-radius: 10px;
+  padding: 12px 18px;
+  width: 100%;
+  max-width: 440px;
+}
+.date-hop-card.highlight {
+  background: #fdfaf2;
+  border-color: #eed593;
+}
+.hop-col {
+  text-align: center;
+}
+.hop-col strong {
+  display: block;
+  font-size: 15px;
+  color: var(--ink);
+}
+.hop-col span {
+  font-size: 11px;
+  color: var(--muted);
+}
+.hop-arrow-col {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--green);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hop-arrow-col span {
+  font-size: 11px;
+  color: #8c492a;
+}
+.week-cycles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  justify-content: center;
+  max-width: 440px;
+}
+.week-block {
+  background: #eef2e6;
+  border: 1px solid #b5c7ac;
+  border-radius: 8px;
+  padding: 6px 10px;
+  text-align: center;
+}
+.week-block.remainder {
+  background: #faede3;
+  border-color: #e5b293;
+}
+.week-block span {
+  display: block;
+  font-size: 10px;
+  color: var(--muted);
+}
+.week-block strong {
+  font-size: 13px;
+  color: var(--ink);
+}
+.weekday-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 10px 0;
+}
+.day-node {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 14px;
+}
+.day-node.start {
+  background: #e0e7d4;
+  border: 1px solid #adc29f;
+  color: #243c31;
+}
+.day-node.end {
+  background: #f0cd65;
+  border: 1px solid #cca32d;
+  color: #3b300c;
+}
+.day-arrow {
+  font-size: 13px;
+  font-weight: 700;
+  color: #8c492a;
+}
+.leap-rule-card {
+  text-align: center;
+  padding: 10px;
+}
+.rule-box {
+  display: inline-block;
+  padding: 14px 22px;
+  border-radius: 12px;
+  border: 2px solid #b5c7ac;
+  background: #fff;
+}
+.rule-box.active {
+  border-color: var(--green);
+  background: #eef3e8;
+}
+.rule-box strong {
+  display: block;
+  font-size: 22px;
+  margin-bottom: 4px;
+  color: var(--ink);
+}
+.rule-box span {
+  font-size: 12px;
+  color: #315b48;
+  font-weight: 600;
+}
+.feb-card {
+  text-align: center;
+  background: #fff;
+  border: 1.5px solid #d9dfcd;
+  border-radius: 12px;
+  padding: 16px 20px;
+  max-width: 280px;
+  margin: 0 auto;
+}
+.big-day-count {
+  display: block;
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--green);
+  margin-top: 6px;
+}
+
+/* Store Receipt & Cash */
+.money-visual-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: start;
+  width: 100%;
+}
+@media (max-width: 720px) {
+  .money-visual-wrap {
+    grid-template-columns: 1fr;
+  }
+}
+.store-receipt {
+  background: #fffdf5;
+  border: 1.5px dashed #b8c4ad;
+  border-radius: 8px;
+  padding: 14px 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+.receipt-header {
+  text-align: center;
+  border-bottom: 1px dashed #cad1bf;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+.receipt-header strong {
+  display: block;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+.receipt-header small {
+  font-size: 10px;
+  color: var(--muted);
+}
+.receipt-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  padding: 4px 0;
+}
+.receipt-line.total-line {
+  border-top: 1.5px dashed #263f37;
+  border-bottom: 1.5px dashed #263f37;
+  padding: 6px 0;
+  font-weight: 700;
+  font-size: 13px;
+  margin: 4px 0;
+}
+.receipt-line.change-line {
+  font-weight: 800;
+  font-size: 13px;
+  color: #2c6240;
+}
+.money-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.cash-tokens-card, .counting-up-card {
+  background: #fff;
+  border: 1px solid #d9dfcd;
+  border-radius: 10px;
+  padding: 14px;
+}
+.cash-tokens-card strong, .counting-up-card strong {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 8px;
+  color: #263f37;
+}
+.cash-tokens-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0;
+  align-items: center;
+}
+.cash-bill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 32px;
+  border-radius: 5px;
+  font-weight: 800;
+  font-size: 13px;
+  border: 1.5px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.08);
+}
+.cash-bill.bill-20 {
+  background: #bfe5bf;
+  color: #1f5022;
+  border-color: #72ab78;
+}
+.cash-bill.bill-10 {
+  background: #e3d2f3;
+  color: #4e2978;
+  border-color: #a485c9;
+}
+.cash-bill.bill-5 {
+  background: #cce4f7;
+  color: #1e4f73;
+  border-color: #7bb3dc;
+}
+.cash-coin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-weight: 800;
+  font-size: 12px;
+  border: 2px solid;
+}
+.cash-coin.coin-2 {
+  background: radial-gradient(circle, #f0cd65 45%, #d1d8dc 46%);
+  border-color: #8f9b9f;
+  color: #433307;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12);
+}
+.cash-coin.coin-1 {
+  background: radial-gradient(circle at 35% 35%, #ffe694, #dfb137);
+  border-color: #b58b1f;
+  color: #4a3806;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12);
+}
+.cash-tokens-card small, .counting-up-card small {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.4;
+  margin-top: 6px;
+}
+.count-up-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 12px 0;
+}
+.count-spot {
+  background: #edf0e3;
+  border: 1px solid #b8c4ad;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-weight: 800;
+  font-size: 14px;
+}
+.count-spot.target {
+  background: #f0cd65;
+  border-color: #cca32d;
+}
+.count-arrow {
+  font-size: 12px;
+  font-weight: 700;
+  color: #8c492a;
+}
+
+/* Form selects & inputs */
+.choice-wrap {
+  width: auto;
+  flex: 1;
+  min-width: 0;
+}
+.measurement-select {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  padding: 9px 4px;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--ink);
+  outline: none;
+  cursor: pointer;
+}
+.unit-suffix {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-left: 2px;
+  white-space: nowrap;
+}

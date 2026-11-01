@@ -7,33 +7,143 @@
   <script defer src="geometry-model.js"></script><script defer src="geometry.js"></script>
 </head>
 <body>
-  <header class="topbar"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">✳</span> little big <b>math</b></a><a class="back-link" href="index.html">← All adventures</a></header>
-  <main class="geometry-main">
-    <section class="geometry-hero"><p class="eyebrow">SHAPE DETECTIVE · A HANDS-ON ADVENTURE</p><h1>Let’s see shapes<br><span>from every side.</span></h1><p>Turn it. Touch its corners. Follow its edges.<br>Discover what makes a prism a prism, and a pyramid a pyramid.</p></section>
-    <div class="geometry-layout">
-      <section class="shape-card" aria-labelledby="solid-name">
-        <div class="shape-controls"><div class="family-switch" role="group" aria-label="Solid type"><button data-family="prism" aria-pressed="true">Prism</button><button data-family="pyramid" aria-pressed="false">Pyramid</button></div><label>Base shape <select id="base-shape"><option value="triangle">Triangle · 3 sides</option><option value="square">Square · 4 sides</option><option value="rectangle">Rectangle · 4 sides</option><option value="pentagon">Pentagon · 5 sides</option><option value="hexagon">Hexagon · 6 sides</option></select></label></div>
-        <h2 id="solid-name">Triangular prism</h2><p id="solid-story" class="solid-story"></p>
-        <div class="view-tabs" role="group" aria-label="What to explore"><button data-mode="shape" aria-pressed="true">Whole shape</button><button data-mode="faces" aria-pressed="false">▰ Faces</button><button data-mode="edges" aria-pressed="false">╱ Edges</button><button data-mode="vertices" aria-pressed="false">● Vertices</button></div>
-        <div class="model-stage"><svg id="solid-view" viewBox="0 0 560 390" role="group" tabindex="0" aria-label="Rotatable solid. Drag or use arrow keys to rotate. Choose faces, edges, or vertices to count parts."></svg><div class="stage-note" id="stage-note">Drag to turn · Arrow keys work too</div></div>
-        <div class="rotate-controls" role="group" aria-label="Rotate the solid"><button data-turn="left" aria-label="Turn left">↶</button><button data-turn="right" aria-label="Turn right">↷</button><button data-turn="up" aria-label="Tilt up">↑</button><button data-turn="down" aria-label="Tilt down">↓</button><button id="reset-view">Reset view</button></div>
-        <div class="display-controls"><label><input id="color-bases" type="checkbox" checked> Color the bases</label><label><input id="xray" type="checkbox"> See through it</label></div>
-        <label class="spread-control" for="spread">Pull the faces apart <input id="spread" type="range" min="0" max="100" value="0"><span>See every flat face</span></label>
-        <div class="count-panel" id="count-panel" hidden><div class="count-heading"><strong id="count-progress" role="status" aria-live="polite"></strong><button id="clear-count" class="text-button">Start counting again</button></div><p id="count-help"></p><div id="part-buttons" class="part-buttons" role="group" aria-label="Mark individual parts"></div></div>
-        <p class="hidden-note">Dashed lines are real edges hidden at the back. They still count! Pulling faces apart is a way to peek inside; it doesn’t add new parts.</p>
-      </section>
-      <aside class="learning-card" aria-labelledby="learning-title">
-        <p class="eyebrow">YOUR DETECTIVE TOOLKIT</p><h2 id="learning-title">Three things to spot</h2>
-        <div class="definition"><span class="definition-icon face-icon">▰</span><div><strong>A face is a flat surface.</strong><p>Imagine laying your palm flat on it.</p></div></div>
-        <div class="definition"><span class="definition-icon edge-icon">╱</span><div><strong>An edge is a line where two faces meet.</strong><p>Trace it with your finger.</p></div></div>
-        <div class="definition"><span class="definition-icon vertex-icon">●</span><div><strong>A vertex is a corner.</strong><p>Tap the point where edges meet. More than one? We call them vertices.</p></div></div>
-        <div class="base-preview"><svg id="base-preview" viewBox="0 0 170 120" role="img"></svg><div><strong id="base-name"></strong><p id="base-description"></p></div></div>
-        <div class="lesson-box"><p class="eyebrow">BUILD IT IN YOUR MIND</p><div class="lesson-tabs" role="group" aria-label="Counting explanation"><button data-lesson="build" aria-pressed="true">Build</button><button data-lesson="faces" aria-pressed="false">Faces</button><button data-lesson="edges" aria-pressed="false">Edges</button><button data-lesson="vertices" aria-pressed="false">Corners</button></div><h3 id="lesson-title"></h3><p id="lesson-text"></p><div id="lesson-equation" class="lesson-equation"></div></div>
-        <div class="shape-totals" aria-label="Total parts in this solid"><button data-mode="faces"><strong id="total-faces">5</strong><span>faces</span></button><button data-mode="edges"><strong id="total-edges">9</strong><span>edges</span></button><button data-mode="vertices"><strong id="total-vertices">6</strong><span>vertices</span></button></div>
-        <div class="notice-box" id="notice"></div>
-      </aside>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">✳</span> little big <b>math</b></a>
+    <div class="topbar-right">
+      <a class="back-link" href="index.html">← All adventures</a>
+      <div class="stars" aria-label="Problems solved"><span aria-hidden="true">★</span> <span id="star-count">0</span> stars earned</div>
     </div>
-    <section class="geometry-practice"><div><p class="eyebrow">TRY YOUR DETECTIVE SKILLS</p><h2>Can you count a mystery shape?</h2><p id="quiz-question">Choose “New mystery” to start. Explore the shape, then tell us how many parts it has.</p><button class="primary" id="new-mystery">New mystery shape ✦</button></div><form id="geometry-quiz" novalidate><div class="quiz-inputs"><label>Faces<input id="guess-faces" type="text" inputmode="numeric" autocomplete="off" placeholder="?" aria-describedby="quiz-feedback"></label><label>Edges<input id="guess-edges" type="text" inputmode="numeric" autocomplete="off" placeholder="?" aria-describedby="quiz-feedback"></label><label>Vertices<input id="guess-vertices" type="text" inputmode="numeric" autocomplete="off" placeholder="?" aria-describedby="quiz-feedback"></label></div><button class="primary" type="submit">Check my counts →</button><div id="quiz-feedback" role="status" aria-live="polite"></div><button id="reveal-counts" type="button" class="text-button" hidden>Show me how to count</button></form></section>
-    <section class="hands-on"><span aria-hidden="true">👐</span><div><h2>Try it away from the screen</h2><p>Build edges with straws and corners with little balls of play dough. Use paper for the faces. Can you make a triangular prism with 6 balls and 9 straws? Now try a rectangular-based pyramid with 5 balls and 8 straws!</p></div></section>
-  </main><footer>Made for curious minds. <span>Flat faces. Meeting edges. Pointy corners.</span></footer>
-</body></html>
+  </header>
+  <main class="geometry-main">
+    <section class="page-hero geometry-hero">
+      <p class="eyebrow"><span class="tiny-dot"></span> SHAPE DETECTIVE · A HANDS-ON ADVENTURE</p>
+      <h1>Let’s see shapes<br><span>from every side.</span></h1>
+      <p class="hero-description">Turn 3D solids, inspect 2D sides and angles, count unit cube silhouettes, unfold flat nets, and flip mirror reflections.</p>
+    </section>
+
+    <!-- Shape Detective Practice & Challenges -->
+    <section class="practice" id="geometry-challenges" aria-label="Shape Detective challenges">
+      <div class="section-heading">
+        <h2>Pick a kind of problem</h2>
+        <button class="text-button" id="mix-button">🎲 Surprise me</button>
+      </div>
+      <div class="topic-groups geometry-groups">
+        <div class="topic-group" role="group" aria-label="3D Solids Explorer">
+          <h3 class="topic-group-title"><span aria-hidden="true">📦</span> 3D Solids <small>Turn solids, count faces, edges &amp; corners</small></h3>
+          <div class="topics">
+            <button class="topic" data-topic="prism"><span class="topic-icon green">📦</span><strong>Prisms</strong><small>Two matching bases</small></button>
+            <button class="topic" data-topic="pyramid"><span class="topic-icon yellow">🔺</span><strong>Pyramids</strong><small>Base + one apex tip</small></button>
+          </div>
+        </div>
+        <div class="topic-group" role="group" aria-label="2D Shapes &amp; Symmetry">
+          <h3 class="topic-group-title"><span aria-hidden="true">🔷</span> 2D Shapes &amp; Symmetry <small>Angles, parallel lines &amp; mirror flips</small></h3>
+          <div class="topics">
+            <button class="topic" data-topic="quads"><span class="topic-icon blue">🔷</span><strong>2D Polygons</strong><small>Parallel sides &amp; 90° angles</small></button>
+            <button class="topic" data-topic="symmetry"><span class="topic-icon lilac">🦋</span><strong>Mirror &amp; Grid</strong><small>Lines of symmetry &amp; flips</small></button>
+          </div>
+        </div>
+        <div class="topic-group" role="group" aria-label="3D Views &amp; Nets">
+          <h3 class="topic-group-title"><span aria-hidden="true">🧱</span> 3D Views &amp; Nets <small>Silhouettes &amp; unfolding solids</small></h3>
+          <div class="topics">
+            <button class="topic" data-topic="views"><span class="topic-icon peach">🧱</span><strong>Block Views</strong><small>Front, top &amp; side views</small></button>
+            <button class="topic" data-topic="nets"><span class="topic-icon green">📦</span><strong>Unfold the Solid</strong><small>Opposite faces in 3D nets</small></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="workspace" id="challenge-workspace">
+        <section class="problem-card" aria-labelledby="problem-title">
+          <div class="card-top">
+            <span class="eyebrow" id="topic-caption">2D POLYGON DETECTIVE</span>
+            <label class="difficulty">Level
+              <select id="difficulty">
+                <option value="easy">At my level</option>
+                <option value="medium">A little harder</option>
+                <option value="large">Big challenge</option>
+              </select>
+            </label>
+          </div>
+          <div class="story-icon" id="story-icon" aria-hidden="true">🔷</div>
+          <h2 id="problem-title">Right angles, parallel lines, and equal sides</h2>
+          <p class="story" id="story"></p>
+          <div class="story-visual" id="story-visual"></div>
+          <form id="answer-form" novalidate>
+            <div id="answer-fields"></div>
+            <button class="primary check" type="submit">Check my answer <span aria-hidden="true">↗</span></button>
+          </form>
+          <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
+          <div class="problem-actions">
+            <button class="text-button" id="hint-button">💡 A little hint</button>
+            <button class="text-button" id="new-button">New problem <span aria-hidden="true">↻</span></button>
+          </div>
+          <p class="hint" id="hint" hidden></p>
+        </section>
+
+        <section class="visual-card" aria-labelledby="visual-title">
+          <div class="card-top">
+            <span class="eyebrow">LET’S PICTURE IT</span>
+            <span class="picture-badge" id="picture-badge">Look for clues</span>
+          </div>
+          <h2 id="visual-title">Step-by-step clues</h2>
+          <p class="step-description" id="step-description"></p>
+          <div id="diagram" class="diagram" aria-live="polite"></div>
+          <div class="equation" id="equation"></div>
+          <div class="step-controls">
+            <button id="previous-step" class="round-button" aria-label="Previous explanation step">←</button>
+            <div id="step-dots" class="step-dots" role="group" aria-label="Explanation steps"></div>
+            <button id="next-step" class="primary">Show the next step →</button>
+          </div>
+          <p class="visual-note" id="visual-note">Take your time. You can try an answer at any step.</p>
+        </section>
+      </div>
+
+      <div class="encouragement">
+        <span aria-hidden="true">🌱</span>
+        <div>
+          <strong>Good thinking grows with practice.</strong>
+          <span>Each solved problem earns a star. Collect 10 for a little celebration!</span>
+        </div>
+        <div class="progress-track" aria-label="Progress toward 10 stars">
+          <div id="progress-fill"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3D Solid Explorer Section (Prisms & Pyramids) -->
+    <section id="solid-explorer" class="solid-explorer-section" aria-label="3D Solids Explorer">
+      <div class="section-intro">
+        <p class="eyebrow">3D SOLIDS EXPLORER</p>
+        <h2>Turn, pull apart, and count 3D solids</h2>
+        <p>Turn it. Touch its corners. Follow its edges. Discover what makes a prism a prism, and a pyramid a pyramid.</p>
+      </div>
+      <div class="geometry-layout">
+        <section class="shape-card" aria-labelledby="solid-name">
+          <div class="shape-controls"><div class="family-switch" role="group" aria-label="Solid type"><button data-family="prism" aria-pressed="true">Prism</button><button data-family="pyramid" aria-pressed="false">Pyramid</button></div><label>Base shape <select id="base-shape"><option value="triangle">Triangle · 3 sides</option><option value="square">Square · 4 sides</option><option value="rectangle">Rectangle · 4 sides</option><option value="pentagon">Pentagon · 5 sides</option><option value="hexagon">Hexagon · 6 sides</option></select></label></div>
+          <h2 id="solid-name">Triangular prism</h2><p id="solid-story" class="solid-story"></p>
+          <div class="view-tabs" role="group" aria-label="What to explore"><button data-mode="shape" aria-pressed="true">Whole shape</button><button data-mode="faces" aria-pressed="false">▰ Faces</button><button data-mode="edges" aria-pressed="false">╱ Edges</button><button data-mode="vertices" aria-pressed="false">● Vertices</button></div>
+          <div class="model-stage"><svg id="solid-view" viewBox="0 0 560 390" role="group" tabindex="0" aria-label="Rotatable solid. Drag or use arrow keys to rotate. Choose faces, edges, or vertices to count parts."></svg><div class="stage-note" id="stage-note">Drag to turn · Arrow keys work too</div></div>
+          <div class="rotate-controls" role="group" aria-label="Rotate the solid"><button data-turn="left" aria-label="Turn left">↶</button><button data-turn="right" aria-label="Turn right">↷</button><button data-turn="up" aria-label="Tilt up">↑</button><button data-turn="down" aria-label="Tilt down">↓</button><button id="reset-view">Reset view</button></div>
+          <div class="display-controls"><label><input id="color-bases" type="checkbox" checked> Color the bases</label><label><input id="xray" type="checkbox"> See through it</label></div>
+          <label class="spread-control" for="spread">Pull the faces apart <input id="spread" type="range" min="0" max="100" value="0"><span>See every flat face</span></label>
+          <div class="count-panel" id="count-panel" hidden><div class="count-heading"><strong id="count-progress" role="status" aria-live="polite"></strong><button id="clear-count" class="text-button">Start counting again</button></div><p id="count-help"></p><div id="part-buttons" class="part-buttons" role="group" aria-label="Mark individual parts"></div></div>
+          <p class="hidden-note">Dashed lines are real edges hidden at the back. They still count! Pulling faces apart is a way to peek inside; it doesn’t add new parts.</p>
+        </section>
+        <aside class="learning-card" aria-labelledby="learning-title">
+          <p class="eyebrow">YOUR DETECTIVE TOOLKIT</p><h2 id="learning-title">Three things to spot</h2>
+          <div class="definition"><span class="definition-icon face-icon">▰</span><div><strong>A face is a flat surface.</strong><p>Imagine laying your palm flat on it.</p></div></div>
+          <div class="definition"><span class="definition-icon edge-icon">╱</span><div><strong>An edge is a line where two faces meet.</strong><p>Trace it with your finger.</p></div></div>
+          <div class="definition"><span class="definition-icon vertex-icon">●</span><div><strong>A vertex is a corner.</strong><p>Tap the point where edges meet. More than one? We call them vertices.</p></div></div>
+          <div class="base-preview"><svg id="base-preview" viewBox="0 0 170 120" role="img"></svg><div><strong id="base-name"></strong><p id="base-description"></p></div></div>
+          <div class="lesson-box"><p class="eyebrow">BUILD IT IN YOUR MIND</p><div class="lesson-tabs" role="group" aria-label="Counting explanation"><button data-lesson="build" aria-pressed="true">Build</button><button data-lesson="faces" aria-pressed="false">Faces</button><button data-lesson="edges" aria-pressed="false">Edges</button><button data-lesson="vertices" aria-pressed="false">Corners</button></div><h3 id="lesson-title"></h3><p id="lesson-text"></p><div id="lesson-equation" class="lesson-equation"></div></div>
+          <div class="shape-totals" aria-label="Total parts in this solid"><button data-mode="faces"><strong id="total-faces">5</strong><span>faces</span></button><button data-mode="edges"><strong id="total-edges">9</strong><span>edges</span></button><button data-mode="vertices"><strong id="total-vertices">6</strong><span>vertices</span></button></div>
+          <div class="notice-box" id="notice"></div>
+        </aside>
+      </div>
+      <section class="geometry-practice"><div><p class="eyebrow">TRY YOUR DETECTIVE SKILLS</p><h2>Can you count a mystery shape?</h2><p id="quiz-question">Choose “New mystery” to start. Explore the shape, then tell us how many parts it has.</p><button class="primary" id="new-mystery">New mystery shape ✦</button></div><form id="geometry-quiz" novalidate><div class="quiz-inputs"><label>Faces<input id="guess-faces" type="text" inputmode="numeric" autocomplete="off" placeholder="?" aria-describedby="quiz-feedback"></label><label>Edges<input id="guess-edges" type="text" inputmode="numeric" autocomplete="off" placeholder="?" aria-describedby="quiz-feedback"></label><label>Vertices<input id="guess-vertices" type="text" inputmode="numeric" autocomplete="off" placeholder="?" aria-describedby="quiz-feedback"></label></div><button class="primary" type="submit">Check my counts →</button><div id="quiz-feedback" role="status" aria-live="polite"></div><button id="reveal-counts" type="button" class="text-button" hidden>Show me how to count</button></form></section>
+      <section class="hands-on"><span aria-hidden="true">👐</span><div><h2>Try it away from the screen</h2><p>Build edges with straws and corners with little balls of play dough. Use paper for the faces. Can you make a triangular prism with 6 balls and 9 straws? Now try a rectangular-based pyramid with 5 balls and 8 straws!</p></div></section>
+    </section>
+  </main>
+  <footer>Made for curious minds. <span>Flat faces. Meeting edges. Pointy corners.</span></footer>
+  <div id="celebration" class="celebration" role="status" aria-live="polite"></div>
+</body>
+</html>
