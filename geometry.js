@@ -199,7 +199,7 @@
     renderSolid(); renderCount();
   }
 
-  document.querySelectorAll('[data-family]').forEach(b => b.addEventListener('click', () => { mystery = false; selectShape(b.dataset.family, base); }));
+  document.querySelectorAll('[data-family]').forEach(b => b.addEventListener('click', () => setTopic(b.dataset.family)));
   $('base-shape').addEventListener('change', () => { mystery = false; selectShape(family, $('base-shape').value); });
   document.querySelectorAll('[data-mode]').forEach(b => b.addEventListener('click', () => { if ((b.dataset.mode === 'edges' || b.dataset.mode === 'vertices') && spread > 0) { spread = 0; $('spread').value = '0'; } setMode(b.dataset.mode); }));
   document.querySelectorAll('[data-lesson]').forEach(b => b.addEventListener('click', () => { lesson = b.dataset.lesson; if (lesson !== 'build') { mode = lesson; spread = 0; $('spread').value = '0'; } render(); }));
@@ -508,29 +508,30 @@
     setTopic(chosen);
   });
 
-  function setTopic(newTopic, shouldScroll = true) {
+  function showGeometryView(isSolid) {
+    const solidSec = $('solid-explorer');
+    const chalSec = $('challenge-workspace');
+    if (solidSec) solidSec.hidden = !isSolid;
+    if (chalSec) chalSec.hidden = isSolid;
+  }
+
+  function setTopic(newTopic, shouldScroll = false) {
     if (newTopic === 'prism' || newTopic === 'pyramid') {
+      showGeometryView(true);
       mystery = false;
       selectShape(newTopic, base);
       history.replaceState(null, '', '#' + newTopic);
       document.querySelectorAll('.topic').forEach(b => {
         b.setAttribute('aria-pressed', String(b.dataset.topic === newTopic));
       });
-      if (shouldScroll) {
-        const el = $('solid-explorer');
-        if (el) el.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' });
-      }
       return;
     }
 
     if (CHALLENGE_KINDS.includes(newTopic)) {
+      showGeometryView(false);
       challengeTopic = newTopic;
       history.replaceState(null, '', '#' + newTopic);
       nextChallengeProblem();
-      if (shouldScroll) {
-        const el = $('challenge-workspace');
-        if (el) el.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' });
-      }
     }
   }
 
@@ -539,38 +540,42 @@
   });
 
   // Handle URL hash changes
-  function syncHash(shouldScroll = false) {
+  function syncHash() {
     const hash = location.hash.slice(1);
     if (hash === 'prism' || hash === 'pyramid') {
+      showGeometryView(true);
       selectShape(hash, base);
       document.querySelectorAll('.topic').forEach(b => {
         b.setAttribute('aria-pressed', String(b.dataset.topic === hash));
       });
-      if (shouldScroll) {
-        const el = $('solid-explorer');
-        if (el) el.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' });
-      }
     } else if (CHALLENGE_KINDS.includes(hash)) {
+      showGeometryView(false);
       challengeTopic = hash;
       nextChallengeProblem();
-      if (shouldScroll) {
-        const el = $('challenge-workspace');
-        if (el) el.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' });
-      }
     }
   }
 
-  window.addEventListener('hashchange', () => syncHash(true));
+  window.addEventListener('hashchange', () => syncHash());
 
   // Initialize
   render();
   updateStars();
 
   const initHash = location.hash.slice(1);
-  if (CHALLENGE_KINDS.includes(initHash)) {
-    challengeTopic = initHash;
+  if (initHash === 'prism' || initHash === 'pyramid') {
+    nextChallengeProblem();
+    showGeometryView(true);
+    selectShape(initHash, base);
+    document.querySelectorAll('.topic').forEach(b => {
+      b.setAttribute('aria-pressed', String(b.dataset.topic === initHash));
+    });
+  } else {
+    if (CHALLENGE_KINDS.includes(initHash)) {
+      challengeTopic = initHash;
+    }
+    showGeometryView(false);
+    nextChallengeProblem();
   }
-  nextChallengeProblem();
 
   // Export for automated verification and inspection
   window.ShapeDetective = {
