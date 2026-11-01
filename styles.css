@@ -8,3 +8,37 @@
 @media(max-width:640px){.topbar{padding:18px}.brand{font-size:19px}.stars{font-size:11px;padding:8px 10px}.hero{padding:30px 18px 26px;gap:4px}.hero .eyebrow{font-size:8px;letter-spacing:1px}h1{font-size:43px;letter-spacing:-2px}.hero-description{font-size:13px}.hero-art{max-width:34%;min-width:95px}.practice{padding:0 18px}.section-heading>span{display:none}.topics{grid-template-columns:repeat(3,1fr);gap:9px}.topic{min-height:108px}.topic strong{font-size:12px}.topic small{font-size:10px;line-height:1.4;display:block}.workspace{grid-template-columns:1fr}.problem-card,.visual-card{padding:22px}.visual-card{min-height:420px}.picture-badge{display:block;font-size:9px}.encouragement{padding:15px 12px}.encouragement div>span{line-height:1.5}.progress-track{width:55px;flex-shrink:0}footer{padding:5px 18px 22px;font-size:10px;gap:15px}.model-row{grid-template-columns:62px 1fr}.total-brace{margin-left:72px}.step-controls .primary{font-size:12px}.celebration{font-size:13px}}
 @media(max-width:380px){.model-row{grid-template-columns:1fr;gap:6px}.total-brace{margin-left:0}.picture-badge{display:none}.diagram{padding:20px 12px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* Shared page navigation */
+.topbar-right{display:flex;align-items:center;gap:16px}
+.back-link{color:var(--ink);font-size:13px;text-decoration:none}
+.back-link:hover{text-decoration:underline}
+.page-hero{padding:35px 28px 26px}
+.page-hero h1{font-size:clamp(37px,4.5vw,54px)}
+
+/* Landing page: adventure cards */
+.adventures{display:grid;gap:16px;margin-bottom:8px}
+.adventure{border:1px solid var(--line);border-radius:20px;background:var(--paper);overflow:hidden}
+.adventure-main{display:flex;align-items:center;gap:18px;padding:20px 22px;color:var(--ink);text-decoration:none}
+.adventure-main:hover .adventure-go{transform:translateX(4px)}
+.adventure-icon{display:grid;place-items:center;flex-shrink:0;width:58px;height:58px;border-radius:17px;font-size:30px;background:#fff9}
+.adventure-text{flex:1}
+.adventure-text strong{display:flex;align-items:center;gap:10px;font-family:Manrope,system-ui,sans-serif;font-size:21px;letter-spacing:-.5px}
+.adventure-text small{display:block;color:var(--muted);font-size:13px;line-height:1.6;margin-top:4px}
+.adventure-go{font-size:26px;transition:transform .15s}
+.new-badge{font-style:normal;font-family:'DM Sans',system-ui,sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;background:var(--green);color:#fff;border-radius:20px;padding:4px 8px}
+.adventure-groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px 22px;padding:16px 22px 20px;border-top:1px dashed #0002;background:#fff6}
+.adventure-groups h3{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;margin:0 0 9px;color:#4f5f55}
+.chips{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:7px}
+.chips a{display:inline-block;background:var(--paper);border:1px solid var(--line);border-radius:30px;padding:7px 12px;font-size:12px;color:var(--ink);text-decoration:none}
+.chips a:hover{border-color:var(--green);background:#f0f2e7}
+.peach-card{background:#fbeee2}.lilac-card{background:#f2ecf8}.green-card{background:#e9efdf}
+
+/* Word problems: grouped topic buttons */
+.topic-groups{display:grid;grid-template-columns:1.25fr .9fr 1.6fr;gap:16px;margin-bottom:26px}
+.topic-group{min-width:0}
+.topic-group-title{font-size:13px;margin:0 0 10px;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px}
+.topic-group-title small{flex-basis:100%;font-weight:400;font-size:11px;color:var(--muted)}
+.topic-group .topics{grid-template-columns:repeat(auto-fit,minmax(110px,1fr));margin-bottom:0;gap:8px}
+@media(max-width:980px){.topic-groups{grid-template-columns:1fr}.topic-group .topics{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}}
+@media(max-width:640px){.page-hero{padding:26px 18px 20px}.topbar-right{gap:10px}.back-link{font-size:11px}.adventure-main{padding:16px;gap:13px}.adventure-icon{width:46px;height:46px;font-size:24px}.adventure-text strong{font-size:18px}.adventure-groups{padding:14px 16px 16px}.topic-group .topics{grid-template-columns:repeat(2,1fr)}}

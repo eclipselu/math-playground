@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ec">
+  <title>Chance Lab · Little Big Math</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="probability.css">
+  <script defer src="probability.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">✳</span> little big <b>math</b></a>
+    <div class="topbar-right"><a class="back-link" href="index.html">← All adventures</a><div class="stars" aria-label="Problems solved"><span aria-hidden="true">★</span> <span id="star-count">0</span> stars earned</div></div>
+  </header>
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow"><span class="tiny-dot"></span> CHANCE LAB · WHAT MIGHT HAPPEN?</p>
+      <h1>Will it happen?<br><span>Count the chances.</span></h1>
+      <p class="hero-description">Marbles, spinners, dice, and coins.<br>Count every way it could go, then try it and see!</p>
+    </section>
+
+    <section class="practice" aria-label="Probability practice">
+      <div class="section-heading"><h2>Pick a kind of problem</h2><button class="text-button" id="mix-button">🎲 Surprise me</button></div>
+      <div class="topic-groups chance-groups">
+        <div class="topic-group" role="group" aria-label="How likely is it?">
+          <h3 class="topic-group-title"><span aria-hidden="true">🌈</span> How likely is it? <small>Use chance words and compare</small></h3>
+          <div class="topics">
+            <button class="topic" data-topic="words"><span class="topic-icon yellow">🌈</span><strong>Certain or impossible?</strong><small>Pick the best chance word</small></button>
+            <button class="topic" data-topic="likely"><span class="topic-icon blue">🫙</span><strong>Pick a marble</strong><small>Which color is most likely?</small></button>
+          </div>
+        </div>
+        <div class="topic-group" role="group" aria-label="Count the chances">
+          <h3 class="topic-group-title"><span aria-hidden="true">🔢</span> Count the chances <small>Say it as “__ out of __”</small></h3>
+          <div class="topics">
+            <button class="topic" data-topic="spinner"><span class="topic-icon peach">🎡</span><strong>Spin it</strong><small>Count the slices</small></button>
+            <button class="topic" data-topic="dice"><span class="topic-icon green">🎲</span><strong>Roll a die</strong><small>6 sides, 6 chances</small></button>
+            <button class="topic" data-topic="coins"><span class="topic-icon yellow">🪙</span><strong>Flip coins</strong><small>List every way</small></button>
+          </div>
+        </div>
+        <div class="topic-group" role="group" aria-label="Play fair">
+          <h3 class="topic-group-title"><span aria-hidden="true">⚖️</span> Play fair <small>Does everyone have the same chance?</small></h3>
+          <div class="topics">
+            <button class="topic" data-topic="fair"><span class="topic-icon lilac">⚖️</span><strong>Is it fair?</strong><small>Compare two players</small></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="workspace">
+        <section class="problem-card" aria-labelledby="problem-title">
+          <div class="card-top"><span class="eyebrow" id="topic-caption">SPIN IT</span><label class="difficulty">Level <select id="difficulty"><option value="easy">At my level</option><option value="medium">A little harder</option></select></label></div>
+          <div class="story-icon" id="story-icon" aria-hidden="true">🎡</div>
+          <h2 id="problem-title">Where will it stop?</h2>
+          <p class="story" id="story"></p>
+          <div class="story-visual" id="story-visual"></div>
+          <form id="answer-form" novalidate>
+            <div id="answer-fields"></div>
+            <button class="primary check" type="submit">Check my answer <span aria-hidden="true">↗</span></button>
+          </form>
+          <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
+          <div class="problem-actions"><button class="text-button" id="hint-button">💡 A little hint</button><button class="text-button" id="new-button">New problem <span aria-hidden="true">↻</span></button></div>
+          <p class="hint" id="hint" hidden></p>
+        </section>
+
+        <section class="visual-card" aria-labelledby="visual-title">
+          <div class="card-top"><span class="eyebrow">LET’S PICTURE IT</span><span class="picture-badge" id="picture-badge">Each slice is one chance</span></div>
+          <h2 id="visual-title">See the chances</h2>
+          <p class="step-description" id="step-description"></p>
+          <div id="diagram" class="diagram" aria-live="polite"></div>
+          <div class="equation" id="equation"></div>
+          <div class="step-controls"><button id="previous-step" class="round-button" aria-label="Previous explanation step">←</button><div id="step-dots" class="step-dots" role="group" aria-label="Explanation steps"></div><button id="next-step" class="primary">Show the next step →</button></div>
+          <p class="visual-note" id="visual-note">Take your time. You can try an answer at any step.</p>
+        </section>
+      </div>
+
+      <section class="experiment" aria-labelledby="experiment-title">
+        <div class="experiment-top">
+          <div><h2 id="experiment-title">🔬 Try it and see</h2><p id="experiment-intro">Chance means we can’t be sure what happens next. Try it lots of times and watch the tally grow.</p></div>
+          <div class="experiment-buttons"><button class="primary" id="try-once">Try once</button><button class="primary" id="try-ten">Try 10 times</button><button class="text-button" id="try-reset">Start over</button></div>
+        </div>
+        <div class="experiment-last" id="experiment-last" aria-live="polite"></div>
+        <div class="tally" id="tally"></div>
+        <p class="experiment-note" id="experiment-note"></p>
+      </section>
+
+      <div class="encouragement"><span aria-hidden="true">🌱</span><div><strong>Good thinking grows with practice.</strong><span>Each solved problem earns a star. Collect 10 for a little celebration!</span></div><div class="progress-track" aria-label="Progress toward 10 stars"><div id="progress-fill"></div></div></div>
+    </section>
+  </main>
+  <footer>Made for curious minds. <span>See it. Try it. You’ve got this.</span></footer>
+  <div id="celebration" class="celebration" role="status" aria-live="polite"></div>
+</body>
+</html>

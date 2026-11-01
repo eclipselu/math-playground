@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ec">
+  <title>Word Problems · Little Big Math</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="geometry.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">✳</span> little big <b>math</b></a>
+    <div class="topbar-right"><a class="back-link" href="index.html">← All adventures</a><div class="stars" aria-label="Problems solved"><span aria-hidden="true">★</span> <span id="star-count">0</span> stars earned</div>
+  </header>
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow"><span class="tiny-dot"></span> WORD PROBLEMS · STORIES INTO PICTURES</p>
+      <h1>Big ideas.<br><span>Little steps.</span></h1>
+      <p class="hero-description">Turn tricky word problems into pictures.<br>Look, try, and discover how the numbers fit.</p>
+    </section>
+
+    <section class="practice" aria-label="Math practice">
+      <div class="section-heading"><h2>Pick a kind of problem</h2><button class="text-button" id="mix-button">🎲 Surprise me</button></div>
+      <div class="topic-groups">
+        <div class="topic-group" role="group" aria-label="Add and take away">
+          <h3 class="topic-group-title"><span aria-hidden="true">➕</span> Add and take away <small>Join, take away, and find what’s missing</small></h3>
+          <div class="topics">
+            <button class="topic" data-topic="missing"><span class="topic-icon lilac">🧩</span><strong>The missing piece</strong><small>Find the other amount</small></button>
+            <button class="topic" data-topic="twoStep"><span class="topic-icon yellow">🎈</span><strong>First… then…</strong><small>Add, then take away</small></button>
+            <button class="topic" data-topic="count"><span class="topic-icon blue">🐸</span><strong>Number hops</strong><small>Follow the pattern</small></button>
+          </div>
+        </div>
+        <div class="topic-group" role="group" aria-label="Equal groups and sharing">
+          <h3 class="topic-group-title"><span aria-hidden="true">🫶</span> Equal groups and sharing <small>Count bags and share fairly</small></h3>
+          <div class="topics">
+            <button class="topic" data-topic="groups"><span class="topic-icon green">🧸</span><strong>Bags of treasures</strong><small>Count equal groups</small></button>
+            <button class="topic" data-topic="sharing"><span class="topic-icon peach">🍓</span><strong>Share fairly</strong><small>Give everyone the same</small></button>
+          </div>
+        </div>
+        <div class="topic-group" role="group" aria-label="Compare with boxes">
+          <h3 class="topic-group-title"><span aria-hidden="true">📏</span> Compare with boxes <small>Draw bars to find the hidden amounts</small></h3>
+          <div class="topics">
+            <button class="topic" data-topic="difference"><span class="topic-icon peach">🍫</span><strong>A little more</strong><small>Compare two amounts</small></button>
+            <button class="topic" data-topic="ratio"><span class="topic-icon green">💰</span><strong>Times as much</strong><small>Share in equal parts</small></button>
+            <button class="topic" data-topic="extra"><span class="topic-icon lilac">✨</span><strong>A little extra</strong><small>Equal parts, plus more</small></button>
+            <button class="topic" data-topic="shop"><span class="topic-icon yellow">🍟</span><strong>Little shop</strong><small>Find the hidden prices</small></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="workspace">
+        <section class="problem-card" aria-labelledby="problem-title">
+          <div class="card-top"><span class="eyebrow" id="topic-caption">LITTLE SHOP</span><label class="difficulty">Level <select id="difficulty"><option value="easy">At my level</option><option value="medium">A little harder</option><option value="large">Big challenge</option></select></label></div>
+          <div class="story-icon" id="story-icon" aria-hidden="true">🍟</div>
+          <h2 id="problem-title">A trip to the little shop</h2>
+          <p class="story" id="story"></p>
+          <form id="answer-form" novalidate>
+            <div id="answer-fields"></div>
+            <button class="primary check" type="submit">Check my answer <span aria-hidden="true">↗</span></button>
+          </form>
+          <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
+          <div class="problem-actions"><button class="text-button" id="hint-button">💡 A little hint</button><button class="text-button" id="new-button">New problem <span aria-hidden="true">↻</span></button></div>
+          <p class="hint" id="hint" hidden></p>
+        </section>
+
+        <section class="visual-card" aria-labelledby="visual-title">
+          <div class="card-top"><span class="eyebrow">LET’S PICTURE IT</span><span class="picture-badge">One box = one equal part</span></div>
+          <h2 id="visual-title">See the story</h2>
+          <p class="step-description" id="step-description"></p>
+          <div id="diagram" class="diagram" aria-live="polite"></div>
+          <div class="equation" id="equation"></div>
+          <div class="step-controls"><button id="previous-step" class="round-button" aria-label="Previous explanation step">←</button><div id="step-dots" class="step-dots" role="group" aria-label="Explanation steps"></div><button id="next-step" class="primary">Show the next step →</button></div>
+          <p class="visual-note" id="visual-note">Take your time. You can try an answer at any step.</p>
+        </section>
+      </div>
+      <div class="encouragement"><span aria-hidden="true">🌱</span><div><strong>Good thinking grows with practice.</strong><span>Each solved problem earns a star. Collect 10 for a little celebration!</span></div><div class="progress-track" aria-label="Progress toward 10 stars"><div id="progress-fill"></div></div></div>
+    </section>
+  </main>
+  <footer>Made for curious minds. <span>See it. Try it. You’ve got this.</span></footer>
+  <div id="celebration" class="celebration" role="status" aria-live="polite"></div>
+</body>
+</html>

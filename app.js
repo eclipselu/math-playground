@@ -223,15 +223,18 @@
       firstWrong.focus();
     }
   });
-  document.querySelectorAll('.topic').forEach(button => button.addEventListener('click', () => { topic = button.dataset.topic; nextProblem(); }));
+  document.querySelectorAll('.topic').forEach(button => button.addEventListener('click', () => { topic = button.dataset.topic; history.replaceState(null, '', '#' + topic); nextProblem(); }));
   $('difficulty').addEventListener('change', event => { level = event.target.value; nextProblem(); });
   $('new-button').addEventListener('click', nextProblem);
-  $('mix-button').addEventListener('click', () => { const choices = Object.keys(topics).filter(kind => kind !== topic); topic = choices[rand(0, choices.length - 1)]; nextProblem(); });
+  $('mix-button').addEventListener('click', () => { const choices = Object.keys(topics).filter(kind => kind !== topic); topic = choices[rand(0, choices.length - 1)]; history.replaceState(null, '', '#' + topic); nextProblem(); });
   $('hint-button').addEventListener('click', () => { $('hint').hidden = !$('hint').hidden; $('hint-button').setAttribute('aria-expanded', String(!$('hint').hidden)); });
   $('previous-step').addEventListener('click', () => { if (step > 0) { step--; renderStep(); } });
   $('next-step').addEventListener('click', () => { if (step < stepsFor(problem).length - 1) { step++; renderStep(); } else nextProblem(); });
   $('step-dots').addEventListener('click', event => { const button = event.target.closest('[data-step]'); if (button) { step = Number(button.dataset.step); renderStep(); } });
-  problem = generate(topic, level, true);
+  // Landing-page links can open a specific problem family, e.g. word-problems.html#sharing.
+  const linked = decodeURIComponent(location.hash.slice(1));
+  if (Object.hasOwn(topics, linked)) { topic = linked; problem = generate(topic, level); }
+  else problem = generate(topic, level, true);
   renderProblem(); updateStars();
   // Pure generators also support checking every problem family without clicking hundreds of times.
   window.MathPlayground = { generate, stepsFor, getState: () => ({topic, level, problem, step, solved, stars}) };

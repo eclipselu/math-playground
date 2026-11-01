@@ -6,12 +6,10 @@
   <meta name="theme-color" content="#f7f5ec">
   <title>Little Big Math · See it. Solve it.</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="geometry.css">
-  <script defer src="app.js"></script>
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">✳</span> little big <b>math</b></a>
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">✳</span> little big <b>math</b></a>
     <div class="stars" aria-label="Problems solved"><span aria-hidden="true">★</span> <span id="star-count">0</span> stars earned</div>
   </header>
   <main>
@@ -19,7 +17,7 @@
       <div>
         <p class="eyebrow"><span class="tiny-dot"></span> A LITTLE PRACTICE. A BIG DISCOVERY.</p>
         <h1>Big ideas.<br><span>Little steps.</span></h1>
-        <p class="hero-description">Turn tricky word problems into pictures.<br>Look, try, and discover how the numbers fit.</p>
+        <p class="hero-description">Every problem turns into a picture.<br>Look, try, and discover how the numbers fit.</p>
       </div>
       <div class="hero-art" aria-hidden="true">
         <svg viewBox="0 0 440 260" xmlns="http://www.w3.org/2000/svg">
@@ -32,50 +30,59 @@
       </div>
     </section>
 
-    <section class="practice" aria-label="Math practice">
-      <a class="geometry-link" href="geometry.html"><span><strong>✦ New adventure: Shape Detective</strong><small>Turn 3D prisms and pyramids. Discover their faces, edges, and corners.</small></span><span aria-hidden="true">→</span></a>
-      <div class="section-heading"><h2>Pick your adventure</h2><button class="text-button" id="mix-button">🎲 Surprise me</button></div>
-      <div class="topics" role="group" aria-label="Problem type">
-        <button class="topic" data-topic="difference"><span class="topic-icon peach">🍫</span><strong>A little more</strong><small>Compare two amounts</small></button>
-        <button class="topic" data-topic="ratio"><span class="topic-icon green">💰</span><strong>Times as much</strong><small>Share in equal parts</small></button>
-        <button class="topic" data-topic="extra"><span class="topic-icon lilac">✨</span><strong>A little extra</strong><small>Equal parts, plus more</small></button>
-        <button class="topic" data-topic="shop"><span class="topic-icon yellow">🍟</span><strong>Little shop</strong><small>Find the hidden prices</small></button>
-        <button class="topic" data-topic="count"><span class="topic-icon blue">🐸</span><strong>Number hops</strong><small>Follow the pattern</small></button>
-        <button class="topic" data-topic="sharing"><span class="topic-icon peach">🍓</span><strong>Share fairly</strong><small>Give everyone the same</small></button>
-        <button class="topic" data-topic="missing"><span class="topic-icon lilac">🧩</span><strong>The missing piece</strong><small>Find the other amount</small></button>
-        <button class="topic" data-topic="groups"><span class="topic-icon green">🧸</span><strong>Bags of treasures</strong><small>Count equal groups</small></button>
-        <button class="topic" data-topic="twoStep"><span class="topic-icon yellow">🎈</span><strong>First… then…</strong><small>Add, then take away</small></button>
-      </div>
+    <section class="practice" aria-labelledby="adventures-title">
+      <div class="section-heading"><h2 id="adventures-title">Pick your adventure</h2><span>Tap a card, or jump straight to a kind of problem</span></div>
+      <div class="adventures">
+        <article class="adventure peach-card">
+          <a class="adventure-main" href="word-problems.html">
+            <span class="adventure-icon" aria-hidden="true">📖</span>
+            <span class="adventure-text"><strong>Word Problems</strong><small>Turn stories into boxes, piles, and number hops. 9 kinds of problems.</small></span>
+            <span class="adventure-go" aria-hidden="true">→</span>
+          </a>
+          <div class="adventure-groups">
+            <div><h3>Add and take away</h3><ul class="chips"><li><a href="word-problems.html#missing">🧩 The missing piece</a></li><li><a href="word-problems.html#twoStep">🎈 First… then…</a></li><li><a href="word-problems.html#count">🐸 Number hops</a></li></ul></div>
+            <div><h3>Equal groups and sharing</h3><ul class="chips"><li><a href="word-problems.html#groups">🧸 Bags of treasures</a></li><li><a href="word-problems.html#sharing">🍓 Share fairly</a></li></ul></div>
+            <div><h3>Compare with boxes</h3><ul class="chips"><li><a href="word-problems.html#difference">🍫 A little more</a></li><li><a href="word-problems.html#ratio">💰 Times as much</a></li><li><a href="word-problems.html#extra">✨ A little extra</a></li><li><a href="word-problems.html#shop">🍟 Little shop</a></li></ul></div>
+          </div>
+        </article>
 
-      <div class="workspace">
-        <section class="problem-card" aria-labelledby="problem-title">
-          <div class="card-top"><span class="eyebrow" id="topic-caption">LITTLE SHOP</span><label class="difficulty">Level <select id="difficulty"><option value="easy">At my level</option><option value="medium">A little harder</option><option value="large">Big challenge</option></select></label></div>
-          <div class="story-icon" id="story-icon" aria-hidden="true">🍟</div>
-          <h2 id="problem-title">A trip to the little shop</h2>
-          <p class="story" id="story"></p>
-          <form id="answer-form" novalidate>
-            <div id="answer-fields"></div>
-            <button class="primary check" type="submit">Check my answer <span aria-hidden="true">↗</span></button>
-          </form>
-          <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
-          <div class="problem-actions"><button class="text-button" id="hint-button">💡 A little hint</button><button class="text-button" id="new-button">New problem <span aria-hidden="true">↻</span></button></div>
-          <p class="hint" id="hint" hidden></p>
-        </section>
+        <article class="adventure lilac-card">
+          <a class="adventure-main" href="probability.html">
+            <span class="adventure-icon" aria-hidden="true">🎲</span>
+            <span class="adventure-text"><strong>Chance Lab <em class="new-badge">New!</em></strong><small>Marbles, spinners, dice, and coins. What is likely? What is fair?</small></span>
+            <span class="adventure-go" aria-hidden="true">→</span>
+          </a>
+          <div class="adventure-groups">
+            <div><h3>How likely is it?</h3><ul class="chips"><li><a href="probability.html#words">🌈 Certain or impossible?</a></li><li><a href="probability.html#likely">🫙 Pick a marble</a></li></ul></div>
+            <div><h3>Count the chances</h3><ul class="chips"><li><a href="probability.html#spinner">🎡 Spin it</a></li><li><a href="probability.html#dice">🎲 Roll a die</a></li><li><a href="probability.html#coins">🪙 Flip coins</a></li></ul></div>
+            <div><h3>Play fair</h3><ul class="chips"><li><a href="probability.html#fair">⚖️ Is the game fair?</a></li></ul></div>
+          </div>
+        </article>
 
-        <section class="visual-card" aria-labelledby="visual-title">
-          <div class="card-top"><span class="eyebrow">LET’S PICTURE IT</span><span class="picture-badge">One box = one equal part</span></div>
-          <h2 id="visual-title">See the story</h2>
-          <p class="step-description" id="step-description"></p>
-          <div id="diagram" class="diagram" aria-live="polite"></div>
-          <div class="equation" id="equation"></div>
-          <div class="step-controls"><button id="previous-step" class="round-button" aria-label="Previous explanation step">←</button><div id="step-dots" class="step-dots" role="group" aria-label="Explanation steps"></div><button id="next-step" class="primary">Show the next step →</button></div>
-          <p class="visual-note" id="visual-note">Take your time. You can try an answer at any step.</p>
-        </section>
+        <article class="adventure green-card">
+          <a class="adventure-main" href="geometry.html">
+            <span class="adventure-icon" aria-hidden="true">🔷</span>
+            <span class="adventure-text"><strong>Shape Detective</strong><small>Turn 3D prisms and pyramids. Count their faces, edges, and corners.</small></span>
+            <span class="adventure-go" aria-hidden="true">→</span>
+          </a>
+          <div class="adventure-groups">
+            <div><h3>3D shapes</h3><ul class="chips"><li><a href="geometry.html#prism">📦 Prisms</a></li><li><a href="geometry.html#pyramid">🔺 Pyramids</a></li></ul></div>
+          </div>
+        </article>
       </div>
-      <div class="encouragement"><span aria-hidden="true">🌱</span><div><strong>Good thinking grows with practice.</strong><span>Each solved problem earns a star. Collect 10 for a little celebration!</span></div><div class="progress-track" aria-label="Progress toward 10 stars"><div id="progress-fill"></div></div></div>
+      <div class="encouragement"><span aria-hidden="true">🌱</span><div><strong>Good thinking grows with practice.</strong><span>Stars from every adventure add up. Collect 10 for a little celebration!</span></div><div class="progress-track" aria-label="Progress toward 10 stars"><div id="progress-fill"></div></div></div>
     </section>
   </main>
   <footer>Made for curious minds. <span>See it. Try it. You’ve got this.</span></footer>
-  <div id="celebration" class="celebration" role="status" aria-live="polite"></div>
+  <script>
+    (() => {
+      let stars = 0;
+      try { stars = Math.max(0, Number(localStorage.getItem('little-big-math-stars')) || 0); } catch (_) {}
+      const progress = stars && stars % 10 === 0 ? 10 : stars % 10;
+      document.getElementById('star-count').textContent = stars.toLocaleString('en-US');
+      document.getElementById('progress-fill').style.width = progress * 10 + '%';
+      document.querySelector('.progress-track').setAttribute('aria-label', `${progress} of 10 stars toward a celebration`);
+    })();
+  </script>
 </body>
 </html>

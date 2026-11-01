@@ -1,0 +1,108 @@
+/* Chance Lab: probability visuals */
+.chance-groups{grid-template-columns:1fr 1.4fr .75fr}
+@media(max-width:980px){.chance-groups{grid-template-columns:1fr}}
+
+.story-visual{display:flex;justify-content:center;margin:0 0 20px}
+.story-visual .jar{max-width:300px}
+
+/* Marbles and jar */
+.marble{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff8 0 18%,transparent 20%),var(--c);border:2px solid #0002;font-size:10px;font-weight:700;color:#263f37c0;transition:opacity .2s,transform .2s}
+.marble.dim{opacity:.2}
+.marble.glow{transform:scale(1.12);box-shadow:0 0 0 3px #fffdf6,0 0 0 5px #314d45}
+.jar{display:flex;flex-wrap:wrap;justify-content:center;align-content:flex-end;gap:6px;margin:0 auto;padding:22px 18px 16px;min-height:110px;width:100%;max-width:340px;background:#ffffffb3;border:3px solid #9fb2a5;border-top-width:8px;border-radius:14px 14px 34px 34px}
+.color-rows{display:grid;gap:10px}
+.color-row{display:grid;grid-template-columns:62px 1fr 28px;align-items:center;gap:10px;padding:6px 8px;border-radius:10px}
+.color-row.glow-row{background:#f7e9b2;box-shadow:inset 0 0 0 2px #d6b44a}
+.color-row-label{font-size:12px;font-weight:600}
+.color-row-marbles{display:flex;flex-wrap:wrap;gap:4px}
+.color-row strong{font-size:18px;text-align:right}
+
+/* Spinner */
+.spinner{display:block;margin:0 auto;max-width:100%;height:auto}
+.slice-text{font-size:14px;font-weight:700;fill:#263f37}
+
+/* Dice */
+.dice-row{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;justify-items:center}
+.die-cell{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:11px;color:var(--muted)}
+.die{display:block;max-width:100%;height:auto;transition:opacity .2s}
+.die.dim{opacity:.3}
+
+/* Coins */
+.coin{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;font-weight:800;font-size:13px;border:2px solid #0003}
+.coin.heads{background:radial-gradient(circle at 35% 30%,#fff7 0 15%,transparent 17%),#f0c65a;color:#6b4d0f}
+.coin.tails{background:radial-gradient(circle at 35% 30%,#fff9 0 15%,transparent 17%),#c9d0d4;color:#3d4a50}
+.coin.big{width:62px;height:62px;font-size:26px;background:#f0c65a;color:#6b4d0f}
+.coin-pair{display:flex;gap:12px}
+.coin-chips{display:inline-flex;gap:3px}
+.coin-chips .coin{width:22px;height:22px;font-size:10px}
+.coin-table{display:grid;gap:4px;max-width:340px;margin:0 auto;width:100%}
+.coin-row{display:grid;grid-template-columns:28px repeat(var(--coins,3),1fr) 24px;align-items:center;justify-items:center;gap:6px;padding:3px 6px;border-radius:9px;transition:opacity .2s}
+.coin-head{font-size:10px;font-weight:700;color:var(--muted)}
+.coin-row>span:first-child{font-size:11px;color:var(--muted)}
+.coin-row.win{background:#f7e9b2;font-weight:700}
+.coin-row.dim{opacity:.35}
+
+/* Out of bar */
+.out-of{display:flex;flex-direction:column;align-items:center;gap:8px}
+.out-of-cells{display:flex;gap:4px;width:100%;max-width:340px}
+.out-of-cells span{flex:1;height:26px;border-radius:6px;background:#fffdf6;border:1.5px solid #9fb2a5}
+.out-of-words{font-size:15px}
+.out-of-words strong{font-size:22px}
+.fair-compare{display:grid;gap:14px}
+.fair-compare>div{display:grid;grid-template-columns:52px 1fr;align-items:center;gap:10px}
+.fair-compare>div>span{font-size:12px;font-weight:700}
+
+/* Chance line */
+.chance-line{padding:34px 0 0}
+.chance-track{position:relative;height:12px;margin:0 10%;border-radius:10px;background:linear-gradient(90deg,#e7d6d0,#f2e6b8 50%,#cfe2c4)}
+.chance-track .chance-marker{left:0}
+.chance-marker{position:absolute;bottom:2px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;font-size:16px;line-height:1;color:#314d45}
+.chance-marker em{font-style:normal;font-size:10px;font-weight:700;background:#314d45;color:#fff;border-radius:6px;padding:3px 6px;margin-bottom:2px;white-space:nowrap}
+.chance-stops{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin-top:12px}
+.chance-stops span{display:flex;flex-direction:column;align-items:center;text-align:center;gap:3px;padding:7px 2px;border-radius:9px}
+.chance-stops strong{font-size:11px;line-height:1.2}
+.chance-stops small{font-size:9px;color:var(--muted);line-height:1.2}
+.chance-stops .here{background:#f7e9b2;box-shadow:inset 0 0 0 2px #d6b44a}
+
+/* Answers */
+.choice-field{border:0;padding:0;margin:0 0 15px;min-width:0}
+.choice-field legend{font-size:13px;font-weight:500;margin-bottom:8px;padding:0}
+.choices{display:flex;flex-wrap:wrap;gap:7px}
+.choice{position:relative}
+.choice input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.choice span{display:inline-block;border:1px solid #b7c3b2;background:#fff;border-radius:30px;padding:8px 13px;font-size:13px;font-weight:600}
+.choice input:checked+span{background:var(--green);border-color:var(--green);color:#fff}
+.choice input:focus-visible+span{outline:3px solid #9071c4;outline-offset:3px}
+.choice:hover span{border-color:var(--green)}
+.choice-field[aria-invalid=true] .choice input:checked+span{background:#ad633c;border-color:#ad633c}
+.answer-label{font-size:13px;font-weight:500;flex:1}
+.out-of-inputs{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--muted);flex-shrink:0}
+.out-of-inputs .input-wrap{width:62px}
+
+/* Experiment */
+.experiment{border:1px solid var(--line);border-radius:20px;padding:24px 25px;background:var(--paper);margin-top:20px}
+.experiment-top{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap}
+.experiment h2{font-size:19px;margin:0 0 6px;letter-spacing:-.4px}
+.experiment-top p{margin:0;font-size:13px;color:var(--muted);line-height:1.6}
+.experiment-buttons{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.experiment-last{display:flex;flex-wrap:wrap;align-items:center;gap:6px;min-height:38px;margin:16px 0 10px;font-size:12px;color:var(--muted)}
+.last-chip{display:inline-flex;animation:pop-in .25s ease-out}
+.last-chip .die{width:26px;height:26px}
+@keyframes pop-in{from{transform:scale(.4);opacity:0}to{transform:scale(1);opacity:1}}
+.tally{display:grid;gap:7px}
+.tally-row{display:grid;grid-template-columns:minmax(90px,auto) 1fr 34px;align-items:center;gap:10px;padding:3px 6px;border-radius:8px}
+.tally-row.win{background:#fbf3d6}
+.tally-label{display:flex;align-items:center;gap:6px}
+.tally-label small{font-size:11px;color:var(--muted)}
+.tally-bar{height:16px;background:#edf0e3;border-radius:8px;overflow:hidden}
+.tally-bar>span{display:block;height:100%;background:#9fbf8f;border-radius:8px;transition:width .3s}
+.tally-row strong{text-align:right;font-size:14px}
+.experiment-note{font-size:13px;line-height:1.6;color:#44554a;margin:14px 0 0;padding:12px;border-radius:10px;background:#edf0e3}
+
+@media(max-width:640px){
+  .marble{width:24px;height:24px}
+  .dice-row{grid-template-columns:repeat(3,1fr)}
+  .experiment{padding:20px}
+  .answer-row:has(.out-of-inputs){flex-direction:column;align-items:flex-start;gap:8px}
+  .chance-stops strong{font-size:10px}
+}

@@ -2,7 +2,7 @@
   'use strict';
   const $ = id => document.getElementById(id);
   const G = window.GeometryModel;
-  let family='prism', base='triangle', mode='shape', lesson='build', yaw=-0.55, tilt=0.42, spread=0, mystery=false;
+  let family=location.hash==='#pyramid'?'pyramid':'prism', base='triangle', mode='shape', lesson='build', yaw=-0.55, tilt=0.42, spread=0, mystery=false;
   let solid=G.build(family,base), drag=null, suppressClick=false;
   const marked={faces:new Set(),edges:new Set(),vertices:new Set()};
   const plural={faces:'faces',edges:'edges',vertices:'vertices'};
