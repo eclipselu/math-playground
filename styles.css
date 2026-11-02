@@ -48,6 +48,36 @@ body.topics-collapsed-body .page-hero .hero-description{display:none}
 .card-top-left{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
 .inline-topics-btn{border:1px solid #c3cfb8;background:#f3f6ec;color:var(--green);border-radius:16px;padding:4px 10px;font-size:11px;font-weight:700}
 .inline-topics-btn:hover{background:var(--green);color:#fff;border-color:var(--green)}
+.current-topic-stars{font-size:11px;font-weight:700;padding:3px 9px;border-radius:14px;background:#f4f5ec;color:var(--muted);border:1px solid var(--line)}
+.current-topic-stars.has-earned{background:#fbf3d0;color:#7d580a;border-color:#e2c66d}
+.topic-star-badge{position:absolute;right:11px;bottom:10px;background:#fbf3d0;color:#7d580a;border:1px solid #e2c66d;border-radius:12px;padding:1px 7px;font-size:10px;font-weight:700}
+.topic.topic-solved{border-color:#b5caa5;background:#fafcf6}
+.strip-chip-stars{background:#fbf3d0;color:#7d580a;border-radius:10px;padding:1px 6px;font-size:10px;font-weight:700}
+.strip-chip[aria-pressed=true] .strip-chip-stars{background:#fff3;color:#fff}
+
+/* Home Progress Dashboard & Per-Topic Badges */
+.home-progress-dashboard{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:16px 20px;margin-bottom:18px;box-shadow:0 2px 10px #263f3708}
+.dashboard-stats{flex:1;min-width:250px}
+.dashboard-stat-main{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.dashboard-badge-icon{font-size:26px;width:44px;height:44px;display:grid;place-items:center;background:#fbf3d0;border-radius:13px;flex-shrink:0}
+.dashboard-stat-main strong{display:block;font-size:14px;margin-bottom:2px}
+.dashboard-stat-main span{display:block;font-size:12px;color:var(--muted)}
+.dashboard-stat-main b{color:#9a6c0b}
+.dashboard-bar-wrap{height:9px;background:#e6eadc;border-radius:10px;overflow:hidden}
+.dashboard-bar-fill{height:100%;background:linear-gradient(90deg,#729866,#315b48);border-radius:10px;transition:width .35s}
+.dashboard-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.resume-btn{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;text-decoration:none;padding:10px 15px;border-radius:24px;font-size:12px;font-weight:600}
+.resume-btn:hover{background:#234636}
+.resume-btn small{opacity:.85;font-weight:400}
+.reset-progress-btn{border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:20px;padding:7px 11px;font-size:11px}
+.reset-progress-btn:hover{border-color:#ad633c;color:#ad633c;background:#fff4ec}
+.adventure-text strong{flex-wrap:wrap}
+.adventure-progress-pill{font-family:'DM Sans',system-ui,sans-serif;font-size:11px;font-weight:700;letter-spacing:0;background:#fff9;border:1px solid #00000018;color:var(--muted);border-radius:20px;padding:3px 10px}
+.adventure-progress-pill.has-progress{background:#fbf3d0;border-color:#dfc368;color:#755208}
+.adventure-progress-pill.is-complete{background:var(--green);border-color:var(--green);color:#fff}
+.chips a{display:inline-flex;align-items:center;gap:6px}
+.chips a.chip-solved{background:#f7fbf2;border-color:#9bbb89}
+.chip-star-badge{background:#fbf3d0;color:#7a5608;border:1px solid #e2c66d;border-radius:12px;padding:1px 6px;font-size:10px;font-weight:700}
 
 /* Landing page: adventure cards */
 .adventures{display:grid;gap:16px;margin-bottom:8px}
