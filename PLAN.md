@@ -97,3 +97,14 @@ Covers China 3B two-way tables, Bellevue scaled graphs, and Ontario Strands C & 
 - [x] **`#twoWayTable` — Two-Way Summary Tables (复式统计表):** Deduce missing interior and total cells across multi-row, multi-column data tables.
 - [x] **`#compassGrid` — 8-Point Compass & Grid Map (位置与方向):** Navigate relative directions (N, S, E, W, NE, NW, SE, SW) between landmarks.
 - [x] **`#codingBot` — Grid Robot & Loop Coding:** Trace and debug step-by-step arrow commands with `repeat N` loops and `if` tiles on a grid.
+
+---
+
+## Phase 8: Brackets & Order of Operations Lab (`brackets.html`)
+Covers multi-layer nested arithmetic (Chinese Grade 3/4 四则混合运算, Bellevue AL order of operations, Ontario Strand B/C):
+- [x] **`#oneBracket` — One Pair of Brackets:** Single `( )` mixed with `×`, `÷`, `+`, `−`.
+- [x] **`#twoBrackets` — Two Brackets:** Evaluating two separate `( )` groups and joining them.
+- [x] **`#nested` — Nested Brackets:** Peel innermost `( )` then outer `( )`, including `123 + 20 × (12 + 2 × (1 + 3))` and multi-layer chains.
+- [x] **`#mixedNest` — Order Traps:** Spot `×` and `÷` beating `+` and `−` inside and outside brackets.
+- [x] **`#addBrackets` — Place the Brackets:** Choose where parentheses go to hit a target value.
+- [x] **`#missingInBracket` — Mystery Inside `( )`:** Peel operations from the outside in to uncover `□`.
