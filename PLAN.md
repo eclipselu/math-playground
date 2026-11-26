@@ -108,3 +108,14 @@ Covers multi-layer nested arithmetic (Chinese Grade 3/4 四则混合运算, Bell
 - [x] **`#mixedNest` — Order Traps:** Spot `×` and `÷` beating `+` and `−` inside and outside brackets.
 - [x] **`#addBrackets` — Place the Brackets:** Choose where parentheses go to hit a target value.
 - [x] **`#missingInBracket` — Mystery Inside `( )`:** Peel operations from the outside in to uncover `□`.
+
+---
+
+## Phase 9: Mix & Match: Combinations Lab (`combinations.html`)
+Covers burger-shop & McDonald's-style mix-and-match combinatorics across optional categories, subsets, pairs, rules, and permutations:
+- [x] **`#mealCombo` — Classic Meal Combo:** Pick 1 item from each category (burgers, fries/sides, drinks, desserts).
+- [x] **`#atLeastOne` — At Least One Item:** Optional categories with Skip cards `(B+1)×(F+1)×(D+1) − 1` (including 3 burgers, 2 fries, 2 drinks → 35).
+- [x] **`#pickTwo` — Pick a Pair:** Unordered 2-item pairs `n×(n−1) ÷ 2` (plus optional drink pairing).
+- [x] **`#toppings` — Build Your Burger:** Yes/No topping subsets (`2^n` and `2^n − 1` when at least 1 topping is required).
+- [x] **`#menuRule` — Menu With a Rule:** Forbidden item pairs and sold-out menu exclusions.
+- [x] **`#routeCode` — Paths, Codes & Lineups:** Multi-stage route multiplication, 3-digit lock codes, and ordered podium finishes.

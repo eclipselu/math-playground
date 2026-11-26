@@ -8,6 +8,7 @@
     { href: 'index.html', label: '🏠 Home: All Adventures', short: 'Home' },
     { href: 'word-problems.html', label: '📖 Word Problems & Logic', short: 'Word Problems' },
     { href: 'brackets.html', label: '🧅 Brackets & Order Lab', short: 'Brackets & Order' },
+    { href: 'combinations.html', label: '🍔 Mix & Match: Combinations', short: 'Combinations' },
     { href: 'multiply-divide.html', label: '🧮 Multiply, Divide & Remainders', short: 'Multiply & Divide' },
     { href: 'area-perimeter.html', label: '📐 Area & Perimeter Studio', short: 'Area & Perimeter' },
     { href: 'fractions.html', label: '🍰 Fractions & Decimals Lab', short: 'Fractions & Decimals' },
